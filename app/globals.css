@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .a4-page {
+    width: 210mm;
+    min-height: 297mm;
+    padding: 15mm;
+    font-size: 11px;
+    line-height: 1.5;
+  }
+
+  .a4-page-compact {
+    font-size: 10px;
+    line-height: 1.4;
+  }
+
+  .a4-page-tiny {
+    font-size: 9px;
+    line-height: 1.3;
+  }
+}
