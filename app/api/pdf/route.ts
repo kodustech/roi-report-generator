@@ -1,7 +1,10 @@
 import { NextRequest, NextResponse } from 'next/server'
-import puppeteer from 'puppeteer'
+import puppeteer from 'puppeteer-core'
+import chromium from '@sparticuz/chromium'
 import { readFileSync } from 'fs'
 import { join } from 'path'
+
+export const maxDuration = 30
 
 export async function POST(request: NextRequest) {
   try {
@@ -10,8 +13,10 @@ export async function POST(request: NextRequest) {
     let browser
     try {
       browser = await puppeteer.launch({
-        headless: true,
-        args: ['--no-sandbox', '--disable-setuid-sandbox']
+        args: chromium.args,
+        defaultViewport: chromium.defaultViewport,
+        executablePath: await chromium.executablePath(),
+        headless: chromium.headless,
       })
       const page = await browser.newPage()
 

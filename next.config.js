@@ -4,6 +4,7 @@ const nextConfig = {
     serverActions: {
       allowedOrigins: ['localhost:3000']
     }
-  }
+  },
+  serverExternalPackages: ['@sparticuz/chromium'],
 }
 module.exports = nextConfig
