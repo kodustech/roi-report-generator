@@ -5,6 +5,6 @@ const nextConfig = {
       allowedOrigins: ['localhost:3000']
     }
   },
-  serverExternalPackages: ['@sparticuz/chromium'],
+  serverExternalPackages: ['@sparticuz/chromium-min'],
 }
 module.exports = nextConfig

@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server'
 import puppeteer from 'puppeteer-core'
-import chromium from '@sparticuz/chromium'
+import chromium from '@sparticuz/chromium-min'
 import { readFileSync } from 'fs'
 import { join } from 'path'
 
@@ -15,7 +15,9 @@ export async function POST(request: NextRequest) {
       browser = await puppeteer.launch({
         args: chromium.args,
         defaultViewport: { width: 1280, height: 720 },
-        executablePath: await chromium.executablePath(),
+        executablePath: await chromium.executablePath(
+          'https://github.com/nichochar/chromium-brotli/releases/download/v143.0.0/chromium-v143.0.0-pack.tar'
+        ),
         headless: true,
       })
       const page = await browser.newPage()
