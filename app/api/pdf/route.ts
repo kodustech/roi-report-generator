@@ -16,7 +16,7 @@ export async function POST(request: NextRequest) {
         args: chromium.args,
         defaultViewport: { width: 1280, height: 720 },
         executablePath: await chromium.executablePath(
-          'https://github.com/nichochar/chromium-brotli/releases/download/v143.0.0/chromium-v143.0.0-pack.tar'
+          'https://github.com/Sparticuz/chromium/releases/download/v143.0.4/chromium-v143.0.4-pack.x64.tar'
         ),
         headless: true,
       })
